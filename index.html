@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Willkommen in der Firma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Mitarbeiter erfassen</h1>
+
+<form action="submit.php" method="POST">
+    <label>Geschlecht:</label><br>
+    <input type="radio" id="m" name="geschlecht" value="Männlich">
+    <label for="m">Männlich</label><br>
+    <input type="radio" id="w" name="geschlecht" value="Weiblich">
+    <label for="w">Weiblich</label><br>
+    <input type="radio" id="neutral" name="geschlecht" value="Neutral">
+    <label for="neutral">Neutral</label><br><br>
+
+    <label for="fname">Vorname:</label><br>
+    <input type="text" id="fname" name="vorname"><br>
+
+    <label for="lname">Nachname:</label><br>
+    <input type="text" id="lname" name="nachname"><br>
+
+    <label for="abteilung">Abteilung:</label><br>
+    <select name="abteilung" id="abteilung">
+        <option value="HR">HR</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Produktion">Produktion</option>
+        <option value="Sales">Sales</option>
+    </select><br><br>
+    <input type="submit" value="Speichern"><br><br>
+    <button>Abteilung new</button>
+    <button>Abteilung liste</button>
+    <button>Mitarbeiter new</button>
+    <button>Mitarbeiter Liste</button>
+
+</form>
+</body>
+</html>
+
+
+
