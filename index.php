@@ -1,30 +1,31 @@
 <?php
 
-include './classes/Department.php';
-include './classes/Gender.php';
-include './classes/Employee.php';
-
 spl_autoload_register(function ($class) {
     include './classes/' . $class . '.php';
 });
-Department::setDepartments();
 
-$departments = Department::getDepartments();
-[$hr, $verkauf, $produktion] = $departments;
+$action = isset($_GET['action']) ? $_GET['action'] : false;
 
-new Employee("Petra", "Pan", Gender::W, $hr);
-new Employee("Tom", "Toll", Gender::M, $verkauf);
-new Employee("Daisy", "Drama", Gender::D, $produktion);
-new Employee("Carla", "Gross", Gender::D, $hr);
-new Employee("Fips", "Froh", Gender::D, $hr);
-
-echo '<pre>';
-foreach($departments as $department)
-{
-    echo $department->getName() . ':<br>';
-    foreach($department->getEmployees() as $employee) {
-        echo $employee->getFullName() . '<br>';
-    }
-    echo '<br>';
+switch ($action) {
+    case 'showEditDepartment':
+        $view = 'editDepartment';
+        break;
+    case 'showEditEmployee':
+        $view = 'editEmployee';
+        break;
+    case 'showListEmployees':
+        $view = 'listEmployees';
+        break;
+    case 'showListDepartments':
+        $view = 'listDepartments';
+        break;
+    default:
+        // Standard output
+        $view = 'listDepartments';
+        break;
 }
-echo '</pre>';
+
+// Include the view file that outputs the full page (HTML + body)
+include 'views/' . $view . '.php';
+
+?>
