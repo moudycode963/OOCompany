@@ -9,7 +9,7 @@ class Department
     private static array $departments = [];
 
     // Liste aller Mitarbeiter (wird aus Employee übernommen)
-    private array $Employees = [];
+    private array $employees = [];
 
     // Eigenschaften einer einzelnen Abteilung
     private ?int $id;
@@ -114,12 +114,12 @@ class Department
     }
 
 
-    /**
-     * Gibt alle Mitarbeiter aller Abteilungen zurück
-     * @return Employee[]
-     */
-    public static function getAllEmployees(): array
-    {
-        return self::$Employees;
-    }
+//    /**
+//     * Gibt alle Mitarbeiter aller Abteilungen zurück
+//     * @return Employee[]
+//     */
+//    public static function getAllEmployees(): array
+//    {
+//        return self::$Employees;
+//    }
 }
