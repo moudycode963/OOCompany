@@ -4,6 +4,9 @@ include './classes/Department.php';
 include './classes/Gender.php';
 include './classes/Employee.php';
 
+spl_autoload_register(function ($class) {
+    include './classes/' . $class . '.php';
+});
 Department::setDepartments();
 
 $departments = Department::getDepartments();
